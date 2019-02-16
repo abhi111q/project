@@ -1,16 +1,25 @@
 <!--browser-sync start --server --directory --files "**/*"-->
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" ng-app="Myfirst">
   <head>
     <meta charset="utf-8">
+    <script src="angular.js"></script>
+    <script src="index.js"></script>
     <title></title>
   </head>
   <body>
-<h1>abhishek jibin</h1>
-<h2>abhishek</h2>
-<h3> abhishek</h3>
-<h4>jibin the thomas</h4>
-<h1>jibin</h1>
-  </body>
+    <h1>angular project</h1>
+   <div ng-controller='Mysecond'>
+    <!-- name is used for variable and name() is used for function-->
+
+     <input type="text" ng-model="name1">
+     
+     <!--<input type="text" ng-model="name()">-->
+     u typed::->>{{name1}}
+     <input type="text" ng-model="name2">
+     <input type="text" ng-model="name3">
+    </div>
+    
+    </body>
 </html>
