@@ -1,3 +1,4 @@
+//git commit -m "String cal"      git add .   ctrl+/ is used for multiple line comment
 (function(){
 	'use strict'
    var 	x=angular.module('calculate',[]);
