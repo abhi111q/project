@@ -27,7 +27,6 @@ int main(){
 		printf("\n%s \t\t %d",o[i].name,o[i].quantity);
 	}
 	
-	printf("\nSorted by quantity number::\n\n");
 	
 	for(i=0;i<10;i++){
 		for(j=0;j<9;j++){
@@ -39,11 +38,14 @@ int main(){
 			}
 		}
 	}
+	getchar();
 	system("cls");
 	printf("After sorting by their quantity::\n\n");
 	printf("Name \t\t Quantity");
 	for(i=0;i<10;i++){
 		printf("\n%s \t\t %d",o[i].name,o[i].quantity);
 	}
+	
+	printf("Abc");
 		
 }
