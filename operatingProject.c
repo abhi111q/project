@@ -2,31 +2,95 @@
 #include<conio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<windows.h>
+
 struct OS{
 	char name[10];
 	int quantity;
 	
 };
 
+
+void gotoxy(int ,int);
+
+void intro1();
+void intro1()
+{   system("color C0");
+ 	Sleep(10);
+	int top=1,left=39,right=80,bottom=6,i;
+        gotoxy(39,0);for(i=0;i<42;i++)printf("%c",178);  //for first horizontal line
+        for(i=-1;i<15;i++)   //for vertical lines
+		{  system("color A0");
+			gotoxy(38,1+i);printf("%c",178);// 1st vertical 
+			gotoxy(39,1+i);printf("%c",178);
+			gotoxy(81,1+i);printf("%c",178); // 2nd vertical 
+	        gotoxy(82,1+i);printf("%c",178);
+		} 
+        for(i=0;i<42;i++)//lower horizontal lines
+		{ system("color B0");
+			gotoxy(i+39,15);printf("%c",178);
+		}
+        gotoxy(2,25);printf(" Made by :-    RULO ABHISHEK ");
+        gotoxy(2,28);for(i=0;i<30;i++)printf("%c",178);
+		gotoxy(85,25);printf("Submitted to :-PUSHPENDRA SIR "); 
+		gotoxy(85,28);for(i=0;i<30;i++)printf("%c",178);
+		
+		for(i=0;i<37;i++)// for inner horizontal design
+		{ system("color C6");
+			gotoxy(42+i,3);printf("%c",035);
+			gotoxy(42+i,12);printf("%c",030);
+		} 
+		for(i=2;i<12;i++)   //for innner vertical lines
+		{ system("color E9");
+			gotoxy(41,1+i);printf("%c",035);
+			gotoxy(79,1+i);printf("%c",035);
+     	} 
+		gotoxy(43,5);printf("      WELCOME TO MY PROJECT");
+		gotoxy(42,9);printf("    LONGEST REMAINING TIME FIRST ");                                 	
+
+}
+
+void gotoxy(int x,int y)
+{
+	HANDLE Manipulador;
+	COORD Coordenadas;
+	Manipulador=GetStdHandle(STD_OUTPUT_HANDLE);
+	Coordenadas.X=x;
+	Coordenadas.Y=y;
+	SetConsoleCursorPosition(Manipulador,Coordenadas);
+}
+
+
 int main(){
 	struct OS o[10],temp;
 	int j,i;
-	printf("WELCOME TO MY OPERATING SYSTEM PROGRAM \n\n");
+	intro1();
 	getchar();
+	system("cls");
+	gotoxy(40,0);
+	printf("WELCOME TO MY OPERATING SYSTEM PROGRAM \n\n");
+	printf("Enter name from \n\n \t a \t b \t c \t d \t e \t f \t g \t h \t i \t j");
+		getchar();
+		
+	// logic to take input
+		
 	for(i=0;i<10;i++){
 		system("cls");
-		printf("\nEnter %dth name :",i+1);
+		printf("\nEnter number %d  name :",i+1);
 		scanf("%s",o[i].name);
-		printf("\nEnter %dth quantity number:",i+1);
+		printf("\nEnter number %d quantity number:",i+1);
 		scanf("%d",&o[i].quantity);
 	}
+	
+	// displaying the entered name along with quantity
+	
 	system("cls");
 	printf("Entered name and quantity are as follows::\n\n");
 	printf("Name \t\t Quantity");
 	for(i=0;i<10;i++){
 		printf("\n%s \t\t %d",o[i].name,o[i].quantity);
 	}
-	
+	// logic to sort structure array on the basis of quantity
 	
 	for(i=0;i<10;i++){
 		for(j=0;j<9;j++){
@@ -38,6 +102,9 @@ int main(){
 			}
 		}
 	}
+	
+	// printing after sorting
+	
 	getchar();
 	system("cls");
 	printf("After sorting by their quantity::\n\n");
@@ -46,6 +113,5 @@ int main(){
 		printf("\n%s \t\t %d",o[i].name,o[i].quantity);
 	}
 	
-	printf("Abc");
 		
 }
