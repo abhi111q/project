@@ -4,6 +4,19 @@
 #include<string.h>
 #include<windows.h>
 
+  // made and owned by :- 
+  
+ // ####### #	  # #       000000
+ // #     # #     # #      0      0
+ // #	  # #     # #      0      0
+ // ######  #     # #      0      0
+ // ##      #	  # #      0      0
+ // #  #	#	  # #      0      0
+ // #    #   #####  ######  000000
+
+
+
+
 struct OS{
 	char name[10];
 	int quantity;
@@ -70,7 +83,7 @@ int main(){
 	gotoxy(40,0);
 	printf("WELCOME TO MY OPERATING SYSTEM PROGRAM \n\n");
 	printf("Enter name from \n\n \t a \t b \t c \t d \t e \t f \t g \t h \t i \t j");
-		getchar();
+		getch();
 		
 	// logic to take input
 		
@@ -86,16 +99,17 @@ int main(){
 	
 	system("cls");
 	printf("Entered name and quantity are as follows::\n\n");
-	printf("Name \t\t Quantity");
+	printf("\nName \t\t Gift Quantity\n\n");
 	for(i=0;i<10;i++){
 		printf("\n%s \t\t %d",o[i].name,o[i].quantity);
 	}
+	printf("\n\n\t\tPress any key to continue ::");
+	getch();
 	// logic to sort structure array on the basis of quantity
 	
 	for(i=0;i<10;i++){
 		for(j=0;j<9;j++){
-			if(o[j].quantity<o[j+1].quantity){
-				
+			if(o[j].quantity<o[j+1].quantity){			
 			temp=o[j];
 			o[j]=o[j+1];
 			o[j+1]=temp;	
@@ -112,6 +126,25 @@ int main(){
 	for(i=0;i<10;i++){
 		printf("\n%s \t\t %d",o[i].name,o[i].quantity);
 	}
-	
-		
+	  char ch;
+	  float price;
+	  printf("\n\n\tDo you want to print Bill :");
+	  printf("\n\n\tEnter 'y' for yes and 'n' for NO ::");
+	  scanf("%c",&ch);
+     if(ch=='y'|| ch=='Y'){
+     	system("cls");
+     	printf("\n\n Enter the price of One gift :");
+     	scanf("%f",&price);
+     	system("cls");
+     	printf("\n\n Bill of every customer In order are ::");
+     	printf("\n Name \t\t Quantity \t\t Price ");
+     	for(i=0;i<10;i++){
+     		printf("\n%s \t\t %d \t\t %f",o[i].name,o[i].quantity,o[i].quantity*price);	
+		 }
+	 }
+	 else{
+	 	system("cls");
+	 	printf("\n\n Thanks for using my Program : \n\n\t\t Have a Great Day !!");
+	 	getch();
+	 }
 }
