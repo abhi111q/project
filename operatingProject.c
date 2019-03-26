@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<windows.h>
+#include<ctime>
 
   // made and owned by :- 
   
