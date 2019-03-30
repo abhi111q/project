@@ -22,9 +22,10 @@ struct OS{
 	char name[10];
 	int quantity;
 	
-};
+}o[10],temp;
 
-
+// function declaration
+void program();
 void gotoxy(int ,int);
 
 void intro1();
@@ -75,8 +76,15 @@ void gotoxy(int x,int y)
 }
 
 
+
 int main(){
-	struct OS o[10],temp;
+	system("cls");
+	program();
+}
+
+
+void program(){
+	
 	int j,i;
 	intro1();
 	getchar();
@@ -140,7 +148,7 @@ int main(){
      	printf("\n\n Bill of every customer In order are ::");
      	printf("\n Name \t\t Quantity \t\t Price ");
      	for(i=0;i<10;i++){
-     		printf("\n%s \t\t %d \t\t %f",o[i].name,o[i].quantity,o[i].quantity*price);	
+     		printf("\n%s \t\t %d \t\t %.2f",o[i].name,o[i].quantity,o[i].quantity*price);	
 		 }
 	 }
 	 else{
@@ -148,4 +156,19 @@ int main(){
 	 	printf("\n\n Thanks for using my Program : \n\n\t\t Have a Great Day !!");
 	 	getch();
 	 }
+	 getch();
+	 getch();
+	 system("cls");
+	 char execute;
+	 printf("\n\nDo you want to want to execute again 'y'  or  'n'::-->\n\n");
+	 scanf("%c",&execute);
+	 if(execute=='Y' || execute=='y'){
+	 	main();
+	 }
+	 else{
+	 	exit(0);
+	 }
 }
+
+
+
