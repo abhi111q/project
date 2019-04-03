@@ -78,20 +78,35 @@ void gotoxy(int x,int y)
 
 
 int main(){
-	system("cls");
-	program();
+	int st;
+	do{
+		system("cls");
+	printf("\n\n 1. Enter the program \n\n 2. Exit\n\n \t\t Enter your choice :: ->");
+	scanf("%d",&st);
+	switch(st){
+		case 1: system("cls");
+				program();
+				break;
+		case 2:exit(0);
+				break;
+		default:printf("\n You have entered wrong choice\n\n Press any key to continue ::\n\n ");	
+				getch();	
+	}
+	}while(st!=2);
+
 }
+
 
 
 void program(){
 	
 	int j,i;
-	intro1();
-	getchar();
+	//intro1();
+	getch();
 	system("cls");
 	gotoxy(40,0);
 	printf("WELCOME TO MY OPERATING SYSTEM PROGRAM \n\n");
-	printf("Enter name from \n\n \t a \t b \t c \t d \t e \t f \t g \t h \t i \t j");
+	printf("Enter name from \n\n \t a \t b \t c \t d \t e \t f \t g \t h \t i \t j\n\n\n\n\t\t Press any key to continue :: ");
 		getch();
 		
 	// logic to take input
@@ -107,13 +122,15 @@ void program(){
 	// displaying the entered name along with quantity
 	
 	system("cls");
-	printf("Entered name and quantity are as follows::\n\n");
-	printf("\nName \t\t Gift Quantity\n\n");
+	printf("\t\tEntered name and quantity are as follows::\n\n");
+	printf("\n\n\t\tName \t\t Gift Quantity\n\n");
 	for(i=0;i<10;i++){
-		printf("\n%s \t\t %d",o[i].name,o[i].quantity);
+		printf("\n\n\t\t%s \t\t %d",o[i].name,o[i].quantity);
 	}
-	printf("\n\n\t\tPress any key to continue ::");
+	printf("\n\n\t\tPress any key to continue ::\n\n");
+	printf("\n\n\t You will get your sorted list ");
 	getch();
+	//	system("cls");
 	// logic to sort structure array on the basis of quantity
 	
 	for(i=0;i<10;i++){
@@ -128,13 +145,14 @@ void program(){
 	
 	// printing after sorting
 	
-	getchar();
-	system("cls");
+
+
 	printf("After sorting by their quantity::\n\n");
-	printf("Name \t\t Quantity");
+	printf("\t\tName \t\t Quantity");
 	for(i=0;i<10;i++){
-		printf("\n%s \t\t %d",o[i].name,o[i].quantity);
+		printf("\n\n\t\t%s \t\t %d",o[i].name,o[i].quantity);
 	}
+	getch();
 	  char ch;
 	  float price;
 	  printf("\n\n\tDo you want to print Bill :");
@@ -146,10 +164,26 @@ void program(){
      	scanf("%f",&price);
      	system("cls");
      	printf("\n\n Bill of every customer In order are ::");
-     	printf("\n Name \t\t Quantity \t\t Price ");
+     	printf("\n Name \t\t Quantity \t Price ");
+     	
+     	for(i=-1;i<15;i++)   //for vertical lines
+		{  system("color A0");
+			gotoxy(38,1+i);printf("%c",178);// 1st vertical 
+			gotoxy(39,1+i);printf("%c",178);
+			gotoxy(81,1+i);printf("%c",178); // 2nd vertical 
+	        gotoxy(82,1+i);printf("%c",178);
+		}
+		  gotoxy(43,1);printf("\n\n Bill of every customer In order are ::");
+     	gotoxy(43,3);printf("\n Name \t\t Quantity \t Price ");
+     	
      	for(i=0;i<10;i++){
-     		printf("\n%s \t\t %d \t\t %.2f",o[i].name,o[i].quantity,o[i].quantity*price);	
-		 }
+     		gotoxy(43,1+i);printf("%s",o[i].name);
+     		gotoxy(58,1+i);printf("%d",o[i].quantity);
+     		gotoxy(73,1+i);printf("%.2f",o[i].quantity*price);
+     	 }
+		 //system("cls");
+	 	printf("\n\n Thanks for using my Program : \n\n\t\t Have a Great Day !!");
+	 	getch();
 	 }
 	 else{
 	 	system("cls");
@@ -157,17 +191,6 @@ void program(){
 	 	getch();
 	 }
 	 getch();
-	 getch();
-	 system("cls");
-	 char execute;
-	 printf("\n\nDo you want to want to execute again 'y'  or  'n'::-->\n\n");
-	 scanf("%c",&execute);
-	 if(execute=='Y' || execute=='y'){
-	 	main();
-	 }
-	 else{
-	 	exit(0);
-	 }
 }
 
 
